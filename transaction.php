@@ -5,19 +5,19 @@
 // and put the containing "lib" folder into your web-project
 //
 
-define('PAYMILL_API_HOST', 'https://api.paymill.com/v2/');
-define('PAYMILL_API_KEY', 'f90d23dcc2a8f9639a45cb65dceabbd2');
+require_once('setup.php');
+
 
 if (isset($_POST['paymillToken'])) {
     $token = $_POST['paymillToken'];
     require 'lib/Services/Paymill/Transactions.php';
-    $transactionsObject = new Services_Paymill_Transactions(PAYMILL_API_KEY, PAYMILL_API_HOST);
+    $transactionsObject = new Services_Paymill_Transactions($secretKey, $apiUrl);
 
     $params = array(
-        'amount' => '250', // E.g. "250" for 2.50 EUR!
-        'currency' => 'EUR', // ISO 4217
+        'amount' => $amount, // E.g. "250" for 2.50 EUR!
+        'currency' => $currency, // ISO 4217
         'token' => $token,
-        'description' => 'Test Transaction'
+        'description' => $description
     );
 
     $transaction = $transactionsObject->create($params);
