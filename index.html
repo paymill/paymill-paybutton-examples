@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <form action="request.php" method="post">
+            <script
+                src="https://button.paymill.com/v1/"
+                id="button"
+                data-label="Pay with CreditCard"
+                data-title="Buy our product"
+                data-description="It's a great product"
+                data-amount="250"
+                data-currency="EUR"
+                data-submit-button="Pay 2.50 EUR"
+                data-elv="true"
+                data-lang="de-DE"
+                data-public-key="TESTPUBLICKEY">
+            </script>
+        </form>
+    </body>
+</html>
