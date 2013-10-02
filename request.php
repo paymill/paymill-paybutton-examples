@@ -1,4 +1,4 @@
-<?
+<?php
 //Please modify the following variables
 $amount = '250'; // E.g. "250" for 2.50 EUR!
 $currency = 'EUR'; // ISO 4217
@@ -48,7 +48,9 @@ if (isset($_POST['paymillToken'])) {
             echo '<strong>Subscription successful!</strong>';
         } else {
             echo '<strong>Subscription not successful!</strong>';
-        }       
+
+        }
+
     } else {
         require 'lib/Services/Paymill/Transactions.php';
         $transactionsObject = new Services_Paymill_Transactions($privateApiKey, "https://api.paymill.com/v2/");
@@ -65,6 +67,6 @@ if (isset($_POST['paymillToken'])) {
             echo '<strong>Transaction successful!</strong>';
         } else {
             echo '<strong>Transaction not successful!</strong>';
-        }           
+        }
     }
 }
