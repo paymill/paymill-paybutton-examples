@@ -6,12 +6,28 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
     <body>
-        <form action="request.php" method="post">
+        <form action="payment.php" method="post">
             <script
                 src="https://button.paymill.com/v1/"
-                id="button"
-                data-label="Pay with CreditCard"
+                id="buttonPayment"
+                data-label="Buy the Product, pay with CreditCard"
                 data-title="Buy our product"
+                data-description="It's a great product"
+                data-amount="250"
+                data-currency="EUR"
+                data-submit-button="Pay 2.50 EUR"
+                data-elv="false"
+                data-lang="de-DE"
+                data-public-key="TESTPUBLICKEY">
+            </script>
+        </form>
+
+        <form action="subscription.php" method="post">
+            <script
+                src="https://button.paymill.com/v1/"
+                id="buttonSubscription"
+                data-label="Subscribe now, pay with CreditCard"
+                data-title="Subscribe now."
                 data-description="It's a great product"
                 data-amount="250"
                 data-currency="EUR"
