@@ -39,10 +39,11 @@ if (isset($_POST['paymillToken'])) {
         echo '<strong>Transaction successful!</strong>';
     } else {
         echo '<strong>Transaction not successful!</strong> <br />';
-        if ((!$transaction['status'] == 'closed')) {
-            echo '<strong>' . $transaction['data']['error'] . '</strong>';
-        }
     }
+
+    echo "<pre>";
+    var_dump($transaction);
+    echo "</pre>";
 }
 
 /**
@@ -113,8 +114,8 @@ function request($action, $params = array(), $privateApiKey)
             $errorMessage = $responseArray['body']['error'];
         }
         $responseCode = '';
-        if (isset($responseArray['body']['response_code'])) {
-            $responseCode = $responseArray['body']['response_code'];
+        if (isset($responseArray['body']['data']['response_code'])) {
+            $responseCode = $responseArray['body']['data']['response_code'];
         }
 
         return array("data" => array(

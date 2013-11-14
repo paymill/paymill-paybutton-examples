@@ -48,10 +48,15 @@ if (isset($_POST['paymillToken'])) {
 
     if (isset($subscription['offer']['subscription_count']['active']) && ($subscription['offer']['subscription_count']['active'])) {
         echo '<strong>Subscription successful!</strong>';
+
     } else {
         echo '<strong>Subscription not successful!</strong>';
 
     }
+
+    echo "<pre>";
+    var_dump($subscription);
+    echo "</pre>";
 }
 
 /**
@@ -121,14 +126,9 @@ function request($action, $params = array(), $privateApiKey)
         if (isset($responseArray['body']['error'])) {
             $errorMessage = $responseArray['body']['error'];
         }
-        $responseCode = '';
-        if (isset($responseArray['body']['response_code'])) {
-            $responseCode = $responseArray['body']['response_code'];
-        }
 
         return array("data" => array(
             "error"            => $errorMessage,
-            "response_code"    => $responseCode,
             "http_status_code" => $httpStatusCode
         ));
     }
