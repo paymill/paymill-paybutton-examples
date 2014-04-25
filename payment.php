@@ -35,7 +35,7 @@ if (isset($_POST['paymillToken'])) {
         $privateApiKey
     );
 
-    if (isset($transaction['status']) && ($transaction['status'] == 'closed')) {
+    if (isset($transaction['response_code']) && ($transaction['response_code'] == 20000)) {
         echo '<strong>Transaction successful!</strong>';
     } else {
         echo '<strong>Transaction not successful!</strong> <br />';
