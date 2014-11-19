@@ -5,4 +5,4 @@ The first button uses the payment.php file to create transactions.
 The second button uses the subscription.php file to create subscriptions.
 
 ##Futher Information
-- https://www.paymill.com/en-gb/documentation-3/add-ons/paybutton/
+- https://developers.paymill.com/en/add-ons/paybutton/

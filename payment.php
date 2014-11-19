@@ -62,7 +62,7 @@ if (isset($_POST['paymillToken'])) {
 function requestApi($action = '', $params = array(), $privateApiKey)
 {
     $curlOpts = array(
-        CURLOPT_URL            => "https://api.paymill.com/v2/" . $action,
+        CURLOPT_URL            => "https://api.paymill.com/v2.1/" . $action,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST  => 'POST',
         CURLOPT_USERAGENT      => 'Paymill-php/0.0.2',
