@@ -74,9 +74,8 @@ function requestApi($action = '', $params = array(), $privateApiKey)
         CURLOPT_URL            => "https://api.paymill.com/v2/" . $action,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_CUSTOMREQUEST  => 'POST',
-        CURLOPT_USERAGENT      => 'Paymill-php/0.0.2',
-        CURLOPT_SSL_VERIFYPEER => true,
-        CURLOPT_CAINFO         => realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR . 'paymill.crt',
+        CURLOPT_USERAGENT      => 'paymill-paybutton-example/1.2.0',
+        CURLOPT_SSL_VERIFYPEER => true
     );
 
     $curlOpts[CURLOPT_POSTFIELDS] = http_build_query($params, null, '&');
